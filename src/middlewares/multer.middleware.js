@@ -2,11 +2,11 @@ import multer from "multer";
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, ".public/uploads");
+    cb(null, "./public");
   },
   filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "_" + Math.round(Math.random() * 1e9);
-    cb(null, file.originalname + "_" + uniqueSuffix);
+    // const uniqueSuffix = Date.now() + "_" + Math.round(Math.random() * 1e9);
+    cb(null, file.originalname);
   },
 });
 
